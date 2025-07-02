@@ -19,12 +19,13 @@ branch: scarthgap
 
 ## Reporting issues
 
-Please use the github issues section of meta-alliedvision-tegra for reporting build or runtime issue. When reporting an issue please include following information about your environment:
+Please use the Github issues section of meta-alliedvision for reporting build or runtime issue. When reporting an issue please include following information about your environment:
 - Camera model and firmware version
 - Host hardware information (SoC, Carrier)
 
 
-Alternatively you can you write an email to the Allied Vision support: support@alliedvision.com
+Alternatively you can contact the [Allied Vision Support](https://www.alliedvision.com/en/about-us/contact-us/technical-support-repair-/-rma/).
+
 
 ## Contributing
 
