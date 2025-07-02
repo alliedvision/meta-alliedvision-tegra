@@ -1,0 +1,1 @@
+CORE_IMAGE_EXTRA_INSTALL:append:tegra = " kernel-module-nvidia-drm nvidia-drm-loadconf "

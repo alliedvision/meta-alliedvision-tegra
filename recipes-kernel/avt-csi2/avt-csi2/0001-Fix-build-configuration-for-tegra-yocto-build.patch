@@ -1,0 +1,35 @@
+From 499608f2650476e4fa653b9e7fc5b2474fcd78ba Mon Sep 17 00:00:00 2001
+From: Dennis Langenkamp <dennis.langenkamp@alliedvision.com>
+Date: Fri, 20 Jun 2025 12:51:14 +0200
+Subject: [PATCH] Fix build configuration for tegra yocto build
+
+Adjusted makefile and KBuild files so that the nvidia oot modules headers can be found correctly.
+---
+ Kbuild   | 2 +-
+ Makefile | 6 +++++-
+ 2 files changed, 6 insertions(+), 2 deletions(-)
+
+diff --git a/Kbuild b/Kbuild
+index 3c40c3a..aa0cb5b 100644
+--- a/Kbuild
++++ b/Kbuild
+@@ -5,1 +5,1 @@ obj-m := avt-csi2.o
+-ccflags-$(CONFIG_TEGRA_OOT_MODULE) += -DNVIDIA -I $(srctree.nvidia-oot)/include
++ccflags-$(CONFIG_TEGRA_OOT_MODULE) += -DNVIDIA -I $(NVIDIA_KERNEL_OOT_INCLUDE)
+
+diff --git a/Makefile b/Makefile
+index b249128..57b25c9 100644
+--- a/Makefile
++++ b/Makefile
+@@ -1,6 +1,10 @@
+ SRC := $(shell pwd)
+ 
+-#CFLAGS += -DISP8000NANO_V1802
++ifdef srctree.nvidia-oot
++export NVIDIA_KERNEL_OOT_INCLUDE=$(srctree.nvidia-oot)/include
++endif
++
++
+ all:
+ 	$(MAKE) -C $(KERNEL_SRC) M=$(SRC)
+ 
