@@ -1,4 +1,4 @@
 
-PREFERRED_VERSION_nvidia-kernel-oot = "36.4.3-avt"
+PREFERRED_VERSION_nvidia-kernel-oot = "36.4.4-avt"
 
 MACHINE_EXTRA_RDEPENDS:append = " avt-csi2 avt-csi2-overlays "
