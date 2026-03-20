@@ -14,7 +14,7 @@ do_install:append:tegra() {
 
 do_deploy() {
     install -d ${DEPLOYDIR}
-    dtbos=$(find ${B}/overlay/*.dtbo)
+    dtbos=$(find ${B}/overlay/nvidia/*.dtbo)
     for dtbo in ${dtbos}; do 
         install -m 0644 ${dtbo} ${DEPLOYDIR}
     done
